@@ -6,6 +6,34 @@
         applicationSelector()
     End Sub
 
+
+
+
+
+
+
+
+
+
+
+    'SOMETHING NOTICABLE ADDED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     Private Sub whateverwhocares_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim result As Integer = MessageBox.Show("Do you want to exit?", "Exit", MessageBoxButtons.YesNo)
         If result = 7 Then
