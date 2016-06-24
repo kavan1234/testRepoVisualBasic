@@ -54,6 +54,13 @@
                 btnMult.PerformClick()
             Case Keys.Divide
                 btnDiv.PerformClick()
+            Case Keys.Back
+                If reset Then
+                    myClear()
+                End If
+                If txtSum.Text <> vbNullString Then
+                    txtSum.Text = txtSum.Text.Substring(0, txtSum.Text.Length - 1)
+                End If
         End Select
 
     End Sub
