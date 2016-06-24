@@ -3,6 +3,8 @@
     Dim num2 As String = vbNullString
     Dim operation As String = vbNullString
     Dim reset As Boolean = 0
+    'get the enter key to work
+    Declare Function GetAsyncKeyState Lib "user32" (ByVal vKey As Integer) As Short
 
     'number button handler
     Private Sub btnNumberClick(sender As Object, e As EventArgs) Handles btn0.Click, btn1.Click, btn2.Click, btn3.Click,
@@ -11,10 +13,50 @@
         If reset Then
             myClear()
         End If
-        Dim number As Integer = Convert.ToInt16(CType(sender, Button).Name.Substring(3, 1))
-        txtSum.Text &= number
-    End Sub
+        If GetAsyncKeyState(13) Then
+            btnEquals.PerformClick()
+        Else
+            Dim number As Integer = Convert.ToInt16(CType(sender, Button).Name.Substring(3, 1))
+            txtSum.Text &= number
+        End If
 
+    End Sub
+    'Handles key presses from numpad :D
+    Private Sub numpadkey(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.NumPad0
+                btn0.PerformClick()
+            Case Keys.NumPad1
+                btn1.PerformClick()
+            Case Keys.NumPad2
+                btn2.PerformClick()
+            Case Keys.NumPad3
+                btn3.PerformClick()
+            Case Keys.NumPad4
+                btn4.PerformClick()
+            Case Keys.NumPad5
+                btn5.PerformClick()
+            Case Keys.NumPad6
+                btn6.PerformClick()
+            Case Keys.NumPad7
+                btn7.PerformClick()
+            Case Keys.NumPad8
+                btn8.PerformClick()
+            Case Keys.NumPad9
+                btn9.PerformClick()
+            Case Keys.Enter
+                btnEquals.PerformClick()
+            Case Keys.Add
+                btnPlus.PerformClick()
+            Case Keys.Subtract
+                btnMinus.PerformClick()
+            Case Keys.Multiply
+                btnMult.PerformClick()
+            Case Keys.Divide
+                btnDiv.PerformClick()
+        End Select
+
+    End Sub
     'operation handler
     Private Sub btnOperation(sender As Object, e As EventArgs) Handles btnPlus.Click, btnMinus.Click, btnMult.Click, btnDiv.Click
         If reset Then
