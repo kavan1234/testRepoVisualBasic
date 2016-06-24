@@ -13,10 +13,6 @@
         End If
     End Sub
 
-    Private Sub CalculatorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CalculatorToolStripMenuItem.Click
-
-    End Sub
-
     Private Sub ApplicationSelectorToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ApplicationSelectorToolStripMenuItem.Click
         applicationSelector()
     End Sub
