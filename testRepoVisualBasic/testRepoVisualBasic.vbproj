@@ -72,6 +72,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationSelector.Designer.vb">
+      <DependentUpon>ApplicationSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class1.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -94,13 +103,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="whateverwhocares.Designer.vb">
+      <DependentUpon>whateverwhocares.vb</DependentUpon>
+    </Compile>
+    <Compile Include="whateverwhocares.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ApplicationSelector.resx">
+      <DependentUpon>ApplicationSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="whateverwhocares.resx">
+      <DependentUpon>whateverwhocares.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
